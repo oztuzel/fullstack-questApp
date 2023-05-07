@@ -1,0 +1,13 @@
+.postButton {
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  color: white;
+}
+
+.avatar {
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+}
+
+.link {
+  text-decoration: none;
+  box-shadow: none;
+}

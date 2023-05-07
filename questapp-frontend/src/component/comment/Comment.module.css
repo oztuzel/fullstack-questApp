@@ -1,0 +1,24 @@
+.comment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  background-color: white;
+}
+
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.link {
+  text-decoration: none;
+  box-shadow: none;
+  color: white;
+}
+
+.commentButton {
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  color: white;
+}
