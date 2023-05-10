@@ -31,7 +31,7 @@ public class UserService {
         Optional<User> user = userRepository.findById(userId);
         if(user.isPresent()) {
             User foundedUser = user.get();
-            foundedUser.setUserName(newUser.getUserName());
+            foundedUser.setUsername(newUser.getUsername());
             foundedUser.setPassword(newUser.getPassword());
             userRepository.save(foundedUser);
             return foundedUser;
@@ -43,5 +43,9 @@ public class UserService {
 
     public void deleteById(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    public User getOneUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }

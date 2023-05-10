@@ -4,6 +4,7 @@ import com.monozel.questAppbackend.entities.Like;
 import com.monozel.questAppbackend.requests.LikeCreateRequest;
 import com.monozel.questAppbackend.responses.LikeResponse;
 import com.monozel.questAppbackend.services.LikeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class LikeController {
     private LikeService likeService;
 
+    @Autowired
     public LikeController (LikeService likeService) {
         this.likeService = likeService;
     }

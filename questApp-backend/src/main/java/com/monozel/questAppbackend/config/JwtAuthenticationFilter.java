@@ -34,11 +34,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String username;
         if(authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request,response);
+            // yani bir sonraki filtreye gec cunku header da istedigimiz token veya bolum yok.
             return;
         }
 
         jwtToken = authHeader.substring(7); // "Bearer " haricindeki yerimiz token
         username = jwtService.extractUsername(jwtToken); // extract username from JWT token
+                // token 3 kisimdan olusur ve ikinci kisimda username de var.
 
         if(username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                             // user daha oncesinde authanticated olup olmadigina da bakiyoruz.

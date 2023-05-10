@@ -4,7 +4,6 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { Button, InputAdornment, OutlinedInput, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
@@ -21,7 +20,10 @@ function PostForm({ username, userId, refreshPosts }) {
   const savePost = () => {
     fetch("http://localhost:8080/posts", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json", 
+        "Authorization" : localStorage.getItem("tokenKey")
+      },
       body: JSON.stringify({
         title: title,
         userId: userId,
@@ -87,7 +89,7 @@ function PostForm({ username, userId, refreshPosts }) {
           }
         />
         <CardContent>
-          <Typography variant="body2" color="text.secondary" component="p">
+          <div>
             <OutlinedInput
               id="outlined-adorment-amount"
               multiline
@@ -108,7 +110,7 @@ function PostForm({ username, userId, refreshPosts }) {
                 </InputAdornment>
               }
             ></OutlinedInput>
-          </Typography>
+          </div>
         </CardContent>
       </Card>
     </div>

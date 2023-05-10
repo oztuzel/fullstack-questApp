@@ -4,8 +4,11 @@ import com.monozel.questAppbackend.entities.Like;
 import com.monozel.questAppbackend.entities.Post;
 import com.monozel.questAppbackend.entities.User;
 import com.monozel.questAppbackend.repos.LikeRepository;
+import com.monozel.questAppbackend.repos.UserRepository;
 import com.monozel.questAppbackend.requests.LikeCreateRequest;
 import com.monozel.questAppbackend.responses.LikeResponse;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -17,15 +20,18 @@ import java.util.stream.Collectors;
 @Service
 public class LikeService {
 
+
     private LikeRepository likeRepository;
+
     private UserService userService;
+
     private PostService postService;
 
-    public LikeService (LikeRepository likeRepository,
-                        UserService userService) {
+    public LikeService(LikeRepository likeRepository, UserService userService) {
         this.likeRepository = likeRepository;
         this.userService = userService;
     }
+
 
     @Autowired
     @Lazy

@@ -8,6 +8,8 @@ import com.monozel.questAppbackend.requests.PostCreateRequest;
 import com.monozel.questAppbackend.requests.PostUpdateRequest;
 import com.monozel.questAppbackend.responses.LikeResponse;
 import com.monozel.questAppbackend.responses.PostResponse;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,11 @@ import java.util.stream.Collectors;
 
 @Service
 public class PostService {
+
     private PostRepository postRepository;
+
     private UserService userService;
+
     private LikeService likeService;
 
     public PostService (PostRepository postRepository, UserService userService ){

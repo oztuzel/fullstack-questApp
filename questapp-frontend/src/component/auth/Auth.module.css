@@ -1,0 +1,18 @@
+.form {
+  margin-top: 80px;
+}
+
+.button {
+  margin-top: 70px;
+  color: white;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+}
+
+.login {
+  color: white;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+}
+
+.p {
+  margin: 40px;
+}

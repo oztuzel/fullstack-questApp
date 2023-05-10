@@ -18,7 +18,7 @@ public class PostResponse {
     public PostResponse(Post entity, List<LikeResponse> likes) {
         this.id = entity.getId();
         this.userId= entity.getUser().getId();
-        this.username = entity.getUser().getUserName();
+        this.username = entity.getUser().getUsername();
         this.title = entity.getText();
         this.text = entity.getTitle();
         this.postLikes = likes;
